@@ -46,4 +46,5 @@ Todos los scripts disponibles para correr el proyecto.
  * Menu vertical en conceptos
  * Paginación en el listado de posts
  * Footer
+ * Boton de leer mas posts
 

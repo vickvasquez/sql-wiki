@@ -2,40 +2,59 @@
 import Header from "@components/Header.astro";
 import BaseHead from "@components/BaseHead.astro";
 import formatDateToLong from "@utils/formatDateToLong";
+import MapDocument from "@components/MapDocument.astro";
+import type { Heading, MapDocument as MapDocumentModel } from "@models/heading";
+import getItemsMapDocument from "@utils/getItemsMapDocument";
 
 export interface Props {
   title: string;
   description: string;
   date: string;
-  image?: string;
   tags?: string[];
+  headings?: Heading[];
 }
 
 const { title, description, date } = Astro.props.frontmatter;
-const formattedDate = formatDateToLong(date)
+const { headings = [] } = Astro.props;
+
+const formattedDate = formatDateToLong(date);
+const items = getItemsMapDocument(headings);
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    <link rel="stylesheet" href="/styles/concept-layout.css" type="text/css">
+    <link rel="stylesheet" href="/styles/concept-layout.css" type="text/css" />
   </head>
   <body>
     <Header />
-    <main class="main">
-      <header>
-        <h1>{title}</h1>
-        <time>{formattedDate}</time>
-      </header>
-      <article>
+    <main>
+      <MapDocument items={items} />
+      <article class="main">
+        <header>
+          <h1>{title}</h1>
+          <time>{formattedDate}</time>
+        </header>
         <slot />
       </article>
     </main>
+    <style>
+      .main {
+        padding-top: 0;
+      }
+
+      .main h1 {
+        margin-top: 0;
+      }
+
+      main {
+        position: relative;
+        top: 65px;
+        display: flex;
+        align-items: flex-start;
+        padding-top: 2rem;
+      }
+    </style>
   </body>
 </html>
-<style>
-  header {
-    margin-bottom: 2rem;
-  }
-</style>

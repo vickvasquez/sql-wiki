@@ -1,0 +1,61 @@
+---
+import type { MapDocument } from "@models/heading";
+
+const { items } = Astro.props;
+---
+
+<nav>
+  <ul>
+    {
+      items.map((item: MapDocument) => {
+        return (
+          <li>
+            <a href={`#${item.slug}`}>{item.text}</a>
+            <ul>
+              {item.childs.map((child) => (
+                <li>
+                  <a class="subitem" href={`#${child.slug}`}>
+                    {child.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>
+<style>
+  nav {
+    height: calc(100vh - 65px);
+    position: fixed;
+    padding-left: 60px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    padding: 8px 0;
+    transition: all ease-in .2s;
+  }
+
+  nav a.subitem {
+    padding-left: 24px;
+  }
+
+  a:hover {
+    opacity: .6;
+  }
+
+  @media screen and (max-width: 768px) {
+    nav {
+      display: none;
+    }
+  }
+</style>

@@ -1,6 +1,6 @@
 <header>
   <a href="/">
-    <img src="/images/logo.png" height="60px" width="auto" alt="sql">
+    <img src="/images/logo.png" height="60px" width="auto" alt="sql" />
     <h1 class="text-gradient">Wiki</h1>
   </a>
 </header>
@@ -8,6 +8,10 @@
   header {
     display: flex;
     padding: 10px 60px;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    z-index: 2;
   }
 
   a {
@@ -20,5 +24,12 @@
     font-size: 1.5rem;
     font-weight: 800;
     margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    header {
+      background-color: var(--white);
+      padding: 0 1.5rem;
+    }
   }
 </style>
