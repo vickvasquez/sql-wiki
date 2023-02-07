@@ -1,8 +1,8 @@
 # SQL Wiki
 
-## 🚀 Project Structure
+## 🚀 Estructura del proyecto
 
-Inside of your Astro project, you'll see the following folders and files:
+A continuación la estructura del proyecto:
 
 ```
 /
@@ -14,23 +14,30 @@ Inside of your Astro project, you'll see the following folders and files:
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
-│       └── index.astro
+│   │   └── index.astro
+|   │   └── blog
+|   │       └── *.mdx
+|   │   └── concepts
+|   │       └── *.mdx
+|   ├── styles/
+|   │   ├── *.css
+|   ├── data/
+|   ├── models/
 └── package.json
 ```
 
-## 🧞 Commands
+## 🧞 Scripts
 
-All commands are run from the root of the project, from a terminal:
+Todos los scripts disponibles para correr el proyecto.
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
+| Script             | Acción                                           |
+| :------------------| :----------------------------------------------- |
+| `pnpm install`     | Instala las depenpendencias                        |
+| `pnpm dev`         | Inicia el servidor en `localhost:3000`             |
+| `pnpm build`       | Crea el proyecto para producción `./dist/`          |
+| `pnpm preview`     | Previsualiza el proyecto construido anteriormente  |
 
+## [Quiero contribuir](CONTRIBUTING.MD)
 
 ## TODO
  * Lint MDX
@@ -39,3 +46,4 @@ All commands are run from the root of the project, from a terminal:
  * Menu vertical en conceptos
  * Paginación en el listado de posts
  * Footer
+
