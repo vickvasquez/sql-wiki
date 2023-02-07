@@ -9,14 +9,14 @@ import sortByDate from "src/utils/sortByDate";
 
 const MAX_POST = 3;
 let allPost;
-let allConcepts;
+let allConcept;
 
 try {
-  allConcepts = await Astro.glob<Post>("./concepts/*.mdx");
+  allConcept = await Astro.glob<Post>("./concepts/*.mdx");
   allPost = await Astro.glob<Post>("./blog/*.mdx");
   } catch (error) {}
 
-let concepts = sortByDate(allConcepts)
+let concepts = sortByDate(allConcept)
 let posts = sortByDate(allPost)
 
 concepts = concepts.slice(0, MAX_POST);
@@ -43,6 +43,7 @@ const content = sortByDate([...concepts, ...posts]);
             <CardPostItem
               title={concept.frontmatter.title}
               href={concept.url ?? ""}
+              date={concept.frontmatter.date}
             />
           ))
         }

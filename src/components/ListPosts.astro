@@ -1,7 +1,8 @@
 ---
 import type { MDXInstance } from "astro";
-import sortByDate from "@utils/sortByDate";
+
 import type { Post } from "@models/post";
+import sortByDate from "@utils/sortByDate";
 import CardPostItem from "@components/CardPostItem.astro";
 
 interface Props {
@@ -16,7 +17,7 @@ const postsSorted = sortByDate(posts);
 <div>
   {
     postsSorted.map((post) => (
-      <CardPostItem title={post.frontmatter.title} href={post.url ?? ""} />
+      <CardPostItem title={post.frontmatter.title} href={post.url ?? ""} date={post.frontmatter.date} />
     ))
   }
 </div>
