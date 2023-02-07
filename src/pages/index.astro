@@ -48,6 +48,9 @@ const content = sortByDate([...concepts, ...posts]);
           ))
         }
       </ul>
+      <div class="link-posts">
+        <a href="/blog">Ver todos los posts</a>
+      </div>
     </section>
   </main>
 </Layout>
@@ -74,5 +77,15 @@ const content = sortByDate([...concepts, ...posts]);
 
   .latest-post {
     padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+
+  .link-posts {
+    margin-top: 2rem;
+  }
+
+  .link-posts a {
+    text-decoration: underline;
+    color: var(--text-color);
   }
 </style>

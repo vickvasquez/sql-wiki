@@ -30,6 +30,7 @@ const { items } = Astro.props;
   nav {
     height: calc(100vh - 65px);
     position: fixed;
+    display: none;
     padding-left: 60px;
   }
 
@@ -53,9 +54,17 @@ const { items } = Astro.props;
     opacity: .6;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 1024px) {
     nav {
-      display: none;
+      width: 250px;
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    nav {
+      width: 350px;
+      display: block;
     }
   }
 </style>

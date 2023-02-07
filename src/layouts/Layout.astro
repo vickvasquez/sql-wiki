@@ -1,6 +1,7 @@
 ---
 import Header from '@components/Header.astro';
 import BaseHead from '@components/BaseHead.astro';
+import Footer from '@components/Footer.astro';
 
 const { title } = Astro.props;
 const content="SQL Wiki, Aquí encontraras todo lo relacionado con el lenguaje SQL"
@@ -14,5 +15,6 @@ const content="SQL Wiki, Aquí encontraras todo lo relacionado con el lenguaje S
   <body>
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>

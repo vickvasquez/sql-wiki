@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check && tsc --noEmit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint ./src"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.16.0",
@@ -18,8 +19,11 @@
   },
   "devDependencies": {
     "@fontsource/fira-code": "^4.5.13",
+    "@typescript-eslint/parser": "^5.51.0",
     "astro-compress": "^1.1.29",
     "astro-layouts": "^1.0.0",
+    "eslint": "^8.33.0",
+    "eslint-plugin-astro": "^0.23.0",
     "husky": "^8.0.3",
     "remark-code-title": "^0.2.2",
     "typescript": "^4.9.5"

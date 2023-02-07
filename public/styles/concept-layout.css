@@ -23,6 +23,11 @@
   margin: 1.5rem 0;
 }
 
+.main a {
+  color: rgb(51, 120, 216);
+  font-size: 18px;
+}
+
 main pre {
   border-radius: 5px
 }
