@@ -1,0 +1,22 @@
+---
+import type { MDXInstance } from "astro";
+import sortByDate from "@utils/sortByDate";
+import type { Post } from "@models/post";
+import CardPostItem from "@components/CardPostItem.astro";
+
+interface Props {
+  posts: MDXInstance<Post>[];
+}
+
+const { posts = [] } = Astro.props as Props;
+
+const postsSorted = sortByDate(posts);
+---
+
+<div>
+  {
+    postsSorted.map((post) => (
+      <CardPostItem title={post.frontmatter.title} href={post.url ?? ""} />
+    ))
+  }
+</div>

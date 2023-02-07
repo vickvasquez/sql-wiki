@@ -1,0 +1,44 @@
+.main h2 {
+  font-size: 1.8rem
+}
+
+.main li,
+.main p {
+  font-size: 1.25rem;
+  line-height: 2;
+  opacity: .8
+}
+
+.main p {
+  margin: 1.2rem 0
+}
+
+.main h1,
+.main h2 {
+  margin-bottom: .8888rem
+}
+
+main pre {
+  border-radius: 5px
+}
+
+.main div[data-remark-code-title] {
+  background-color: #e4e4e7;
+  color: #000;
+  font-family: Fira Code, monospace;
+  font-size: .8rem;
+  padding: .5rem 1rem;
+  border-top-right-radius: .25rem;
+  border-top-left-radius: .25rem;
+  transition-duration: .15s
+}
+
+code {
+  display: block;
+  padding: 24px
+}
+
+code .line {
+  display: block;
+  font-family: "Fira code"
+}

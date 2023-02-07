@@ -1,0 +1,41 @@
+---
+import Header from "@components/Header.astro";
+import BaseHead from "@components/BaseHead.astro";
+import formatDateToLong from "@utils/formatDateToLong";
+
+export interface Props {
+  title: string;
+  description: string;
+  date: string;
+  image?: string;
+  tags?: string[];
+}
+
+const { title, description, date } = Astro.props.frontmatter;
+const formattedDate = formatDateToLong(date)
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+    <link rel="stylesheet" href="/styles/concept-layout.css" type="text/css">
+  </head>
+  <body>
+    <Header />
+    <main class="main">
+      <header>
+        <h1>{title}</h1>
+        <time>{formattedDate}</time>
+      </header>
+      <article>
+        <slot />
+      </article>
+    </main>
+  </body>
+</html>
+<style>
+  header {
+    margin-bottom: 2rem;
+  }
+</style>

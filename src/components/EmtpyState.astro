@@ -1,0 +1,20 @@
+---
+const { title, description } = Astro.props
+---
+
+<section class="section">
+  <h2>{title}</h2>
+  <p>{description}</p>
+</section>
+<style>
+  .section {
+    display: grid;
+    place-content: center;
+    height: calc(100vh - 150px);
+  }
+
+  .section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+</style>

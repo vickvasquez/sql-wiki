@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import EmtpyState from "@components/EmtpyState.astro";
+import ListPosts from "@components/ListPosts.astro";
+import type { Post } from "@models/post";
+
+const concepts = await Astro.glob<Post>("./concepts/*.mdx");
+---
+
+<Layout title="Conceptos.">
+  <main class="main">
+    <h2>Conceptos</h2>
+    {
+      concepts.length === 0 && (
+        <EmtpyState
+          title="Por el momento no hay ningún concepto"
+          description=""
+        />
+      )
+    }
+
+    {
+      concepts.length > 0 && <ListPosts posts={concepts} />
+    }
+  </main>
+</Layout>

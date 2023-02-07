@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import type { Post } from "@models/post";
+import CardPostItem from "@components/CardPostItem.astro";
+import Sections from "../components/Sections.astro";
+import sections from "../data/sections";
+import sortByDate from "src/utils/sortByDate";
+
+const MAX_POST = 3;
+let allPost;
+let allConcepts;
+
+try {
+  allConcepts = await Astro.glob<Post>("./concepts/*.mdx");
+  allPost = await Astro.glob<Post>("./blog/*.mdx");
+  } catch (error) {}
+
+let concepts = sortByDate(allConcepts)
+let posts = sortByDate(allPost)
+
+concepts = concepts.slice(0, MAX_POST);
+posts = posts.slice(0, MAX_POST);
+
+const content = sortByDate([...concepts, ...posts]);
+---
+
+<Layout title="SQL Wiki.">
+  <main class="main">
+    <section class="instructions">
+      <h2>
+        Todo lo que necesitas saber sobre el lenguaje SQL, lo encontrarás aquí
+      </h2>
+    </section>
+    <ul role="list" class="link-card-grid">
+      <Sections sections={sections} />
+    </ul>
+    <section class="latest-post">
+      <h2>Posts Recientes</h2>
+      <ul role="list" class="post-card-grid">
+        {
+          content.map((concept) => (
+            <CardPostItem
+              title={concept.frontmatter.title}
+              href={concept.url ?? ""}
+            />
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .post-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .latest-post {
+    padding-top: 3rem;
+  }
+</style>

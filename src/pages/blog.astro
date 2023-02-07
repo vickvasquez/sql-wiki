@@ -1,0 +1,28 @@
+---
+import CardPostItem from "@components/CardPostItem.astro";
+import EmtpyState from "@components/EmtpyState.astro";
+import ListPosts from "@components/ListPosts.astro";
+import type { Post } from "@models/post";
+import Layout from "../layouts/Layout.astro";
+
+const posts = await Astro.glob<Post>("./blog/*.mdx");
+
+---
+
+<Layout title="Blog.">
+  <main class="main">
+    <h2>Blog</h2>
+    {
+      posts.length === 0 && (
+        <EmtpyState
+          title="Por el momento no hay ningún gist"
+          description="Aquí encontrarás todos los trucos/scripts de SQL, vuelve pronto"
+        />
+      )
+    }
+
+    {
+      posts.length > 0 && <ListPosts posts={posts} />
+    }
+  </main>
+</Layout>

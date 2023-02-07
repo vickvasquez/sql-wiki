@@ -1,0 +1,15 @@
+---
+import type { Section } from "../data/sections";
+import Card from "./Card.astro";
+
+const { sections } = Astro.props
+---
+{
+  sections.map((section: Section) => (
+    <Card
+      title={section.name}
+      href={section.url}
+      body={section.description}
+    />
+  ))
+}

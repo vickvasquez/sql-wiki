@@ -1,0 +1,38 @@
+:root {
+  --accent: 124, 58, 237;
+  --white: #fff;
+  --accent-gradient: linear-gradient(
+    45deg,
+    rgb(var(--accent)),
+    #da62c4 30%,
+    white 60%
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: system-ui, sans-serif;
+  background-color: var(--white);
+  font-size: 16px;
+}
+
+.main {
+  margin: auto;
+  padding: 1.5rem;
+  max-width: 75ch;
+}
+
+.text-gradient {
+  background-image: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
+  background-position: 0%;
+}
