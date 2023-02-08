@@ -28,6 +28,10 @@ body {
   margin: auto;
   padding: 1.5rem;
   max-width: 75ch;
+  width: 75ch;
+  position: relative;
+  top: 65px;
+  min-height: calc(100vh - 106px);
 }
 
 .text-gradient {

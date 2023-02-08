@@ -4,8 +4,11 @@ import ListPosts from "@components/ListPosts.astro";
 import type { Post } from "@models/post";
 import Layout from "../layouts/Layout.astro";
 
-const posts = await Astro.glob<Post>("./blog/*.mdx");
+let posts: any[] = [];
 
+try {
+  posts = await Astro.glob<Post>("./blog/*.mdx");
+} catch (error) {}
 ---
 
 <Layout title="Blog.">
@@ -14,14 +17,12 @@ const posts = await Astro.glob<Post>("./blog/*.mdx");
     {
       posts.length === 0 && (
         <EmtpyState
-          title="Por el momento no hay ningún gist"
-          description="Aquí encontrarás todos los trucos/scripts de SQL, vuelve pronto"
+          title="Por el momento no hay ningún post"
+          description="Aquí encontrarás todos los tutoriales, vuelve pronto"
         />
       )
     }
 
-    {
-      posts.length > 0 && <ListPosts posts={posts} />
-    }
+    {posts.length > 0 && <ListPosts posts={posts} />}
   </main>
 </Layout>

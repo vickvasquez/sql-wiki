@@ -14,10 +14,10 @@ let allConcept;
 try {
   allConcept = await Astro.glob<Post>("./concepts/*.mdx");
   allPost = await Astro.glob<Post>("./blog/*.mdx");
-  } catch (error) {}
+} catch (error) {}
 
-let concepts = sortByDate(allConcept)
-let posts = sortByDate(allPost)
+let concepts = sortByDate(allConcept);
+let posts = sortByDate(allPost);
 
 concepts = concepts.slice(0, MAX_POST);
 posts = posts.slice(0, MAX_POST);

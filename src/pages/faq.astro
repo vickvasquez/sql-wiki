@@ -1,13 +1,24 @@
 ---
 import EmtpyState from "@components/EmtpyState.astro";
 import Layout from "../layouts/Layout.astro";
+import type { Post } from "@models/post";
+import ListPosts from "@components/ListPosts.astro";
+
+const allFaq = await Astro.glob<Post>("./faq/*.mdx");
 ---
 
 <Layout title="Gists.">
   <main class="main">
-    <EmtpyState
-      title="Por el momento no hay ningúna pregunta"
-      description="Aquí encontrarás las preguntas mas comunes sobre SQL"
-    />
+    <h1>Preguntas frequentas</h1>
+    {
+      allFaq.length === 0 && (
+        <EmtpyState
+          title="Por el momento no hay ningúna pregunta"
+          description="Aquí encontrarás las preguntas mas comunes sobre SQL"
+        />
+      )
+    }
+
+    {allFaq.length > 0 && <ListPosts posts={allFaq} />}
   </main>
 </Layout>

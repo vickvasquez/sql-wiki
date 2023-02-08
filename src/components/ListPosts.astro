@@ -14,10 +14,21 @@ const { posts = [] } = Astro.props as Props;
 const postsSorted = sortByDate(posts);
 ---
 
-<div>
+<ul role="list" class="post-card-grid">
   {
     postsSorted.map((post) => (
-      <CardPostItem title={post.frontmatter.title} href={post.url ?? ""} date={post.frontmatter.date} />
+      <CardPostItem
+        title={post.frontmatter.title}
+        href={post.url ?? ""}
+        date={post.frontmatter.date}
+      />
     ))
   }
-</div>
+</ul>
+<style>
+  .post-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
