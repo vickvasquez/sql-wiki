@@ -1,17 +1,32 @@
 ---
 title: Setencia SELECT
-description: "La setencia SELECT se usa para recuperar datos de una o varias tablas"
+description: Una de las sentencias SQL más importantes es SELECT, ya que permite realizar consultas sobre los datos almacenados en la base de datos.
 date: 02/05/2023
 tags:
   - sql
   - select
 ---
 
-## Introduction
+## Introducción
 
-La setencia SELECT forma parte del lenguaje [DML](/guides/conceptos-basicos-de-sql#dml-lenguaje-de-manipulación-de-datos)
+La setencia SELECT forma parte del lenguaje [DML](/guides/conceptos-basicos-de-sql#dml-lenguaje-de-manipulación-de-datos) y es una de las mas
+importantes porque permite realizar consultas sobre los datos almacenados en la base de datos.
 
 ## Sintaxis
+Tiene una sintaxis bastante simple, como se ve a continuación.
+
+```sql
+SELECT * FROM nombretabla
+```
+Si observamos la sintaxis anterior, podemos ver que tiene el caracter _*_, con esto le estamos diciendo al lenguaje que queremos todos las columnas
+de la tabla al que se le esta haciendo la operación.
+
+Y ¿Si solo quiero algunas columnas? esto es bastante sencillo, en lugar del * especificamos el nombre de las columnas separadas
+por comas.
+
+```sql
+SELECT columna1, columna2, ... FROM nombretabla
+```
 
 ## Ejemplos
 ### Recuperar todos los campos
