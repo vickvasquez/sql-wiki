@@ -2,7 +2,7 @@
 Antes de empezar a contribuir, hay algunos puntos a tener en cuenta.
 
 - El contenido de una pagina se escribe en archivos `*.mdx`
-- Dependiendo del tipo de contenido `Tutorial` o `Conceptos` deberá colocarlo en su respectiva carpeta `pages/blog` o `pages/concepts`
+- Dependiendo del tipo de contenido `Tutorial` o `Guías` deberá colocarlo en su respectiva carpeta `pages/blog` o `pages/guides`
 - El nombre del archivo, será la ruta de la pagina: por ejemplo `/blog/test-feature.mdx` la ruta sería `/blog/test-feature`
 - Un archivo `*.mdx` debe comenzar con *frontmatter* descrito en [Front-matter](#front-matter).
 

@@ -12,7 +12,7 @@ const options = {
   type: { type: 'string', default: 'blog' }
 }
 
-const ALLOWED_TYPES = ['blog', 'concept', 'faq', 'gist']
+const ALLOWED_TYPES = ['blog', 'guides', 'faq', 'gist']
 
 const usage = `
   USAGE:

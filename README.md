@@ -17,7 +17,7 @@ A continuación la estructura del proyecto:
 │   │   └── index.astro
 |   │   └── blog
 |   │       └── *.mdx
-|   │   └── concepts
+|   │   └── guides
 |   │       └── *.mdx
 |   ├── styles/
 |   │   ├── *.css
@@ -53,7 +53,7 @@ Ejecutando el siguiente script podrás crear un nuevo archivo `mdx` automaticame
  * Lint MDX
  * Lint astr tsx
  * Preview Deploy
- * Menu vertical en conceptos
+ * Menu vertical en guías
  * Paginación en el listado de posts
  * Footer
  * Boton de leer mas posts

@@ -4,23 +4,23 @@ import EmtpyState from "@components/EmtpyState.astro";
 import ListPosts from "@components/ListPosts.astro";
 import type { Post } from "@models/post";
 
-const concepts = await Astro.glob<Post>("./concepts/*.mdx");
+const guides = await Astro.glob<Post>("./guides/*.mdx");
 ---
 
-<Layout title="Conceptos.">
+<Layout title="Guías">
   <main class="main">
-    <h2>Conceptos</h2>
+    <h2>Guías</h2>
     {
-      concepts.length === 0 && (
+      guides.length === 0 && (
         <EmtpyState
-          title="Por el momento no hay ningún concepto"
+          title="Por el momento no hay ningún guía"
           description=""
         />
       )
     }
 
     {
-      concepts.length > 0 && <ListPosts posts={concepts} />
+      guides.length > 0 && <ListPosts posts={guides} />
     }
   </main>
 </Layout>

@@ -6,13 +6,13 @@ export interface Section {
 
 const sections: Section[] = [
   {
-    name: 'Blog',
+    name: 'Articulos',
     url: '/blog',
     description: 'En esta sección aprenderás a implementar el lenguaje en sus diferentes motores'
   },
   {
-    name: 'Conceptos',
-    url:'/concepts',
+    name: 'Guías',
+    url:'/guides',
     description: 'Aprende los diferentes conceptos del lenguaje SQL'
   },
   {
