@@ -26,3 +26,5 @@ tags:
   - MySQL
 ---
 ```
+
+> Hay un script que hará todo esto automaticamente ```pnpm create-post```, su uso completo lo puedes ver en el README.md

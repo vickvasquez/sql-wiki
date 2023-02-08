@@ -32,10 +32,20 @@ Todos los scripts disponibles para correr el proyecto.
 
 | Script             | Acción                                           |
 | :------------------| :----------------------------------------------- |
-| `pnpm install`     | Instala las depenpendencias                        |
-| `pnpm dev`         | Inicia el servidor en `localhost:3000`             |
-| `pnpm build`       | Crea el proyecto para producción `./dist/`          |
-| `pnpm preview`     | Previsualiza el proyecto construido anteriormente  |
+| `pnpm install`     | Instala las depenpendencias                      |
+| `pnpm dev`         | Inicia el servidor en `localhost:3000`           |
+| `pnpm build`       | Crea el proyecto para producción `./dist/`       |
+| `pnpm preview`     | Previsualiza el proyecto construido anteriormente|
+| `pnpm create-post` | Crea un nuevo archivo automaticamente            |
+
+
+## ⚡️ Crear nuevo archivo automaticamente
+
+Ejecutando el siguiente script podrás crear un nuevo archivo `mdx` automaticamente con el frontmatter configurado.
+
+```
+ pnpm create-post --title="This a title of a post" --description="This a description of a post" --type="faq" --fileName="what-is-foo?"
+```
 
 ## [Quiero contribuir](CONTRIBUTING.MD)
 
